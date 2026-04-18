@@ -47,7 +47,7 @@ jobs:
     steps:
       # STEP 1: Clone the repository onto the runner
       - name: Checkout
-        uses: actions/checkout@v4          # Official GitHub action to clone our repo
+        uses: actions/checkout@v6          # Official GitHub action to clone our repo
 
       # STEP 2: Configure GitHub Pages settings
       # Prepares the Pages service to receive our files

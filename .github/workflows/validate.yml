@@ -32,7 +32,7 @@ jobs:
 
       # STEP 1: Clone the repository
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # STEP 2: Make sure all 5 HTML pages exist
       # If a developer accidentally deletes a page, this catches it

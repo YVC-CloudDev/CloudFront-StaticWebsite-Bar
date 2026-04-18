@@ -27,7 +27,7 @@ jobs:
     steps:
       # STEP 1: Clone the repo so we can read the HTML files
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # STEP 2: Find every external URL in our HTML and test it
       # Uses "curl" to make HTTP requests and check the response code

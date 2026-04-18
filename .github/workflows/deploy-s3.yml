@@ -45,7 +45,7 @@ jobs:
       # STEP 1: Checkout the repository code
       # Without this, the runner has an empty workspace — no files to deploy!
       - name: Checkout code
-        uses: actions/checkout@v4  # Official GitHub action to clone our repo onto the runner
+        uses: actions/checkout@v6  # Official GitHub action to clone our repo onto the runner
 
       # STEP 2: Authenticate with AWS using OIDC (no static keys!)
       # This is where the magic happens:
@@ -54,7 +54,7 @@ jobs:
       #   3. AWS checks the token against the IAM Role's trust policy
       #   4. If it matches our repo, AWS gives us temporary credentials
       - name: Configure AWS Credentials (Assume IAM Role via OIDC)
-        uses: aws-actions/configure-aws-credentials@v4   # Official AWS action for OIDC auth
+        uses: aws-actions/configure-aws-credentials@v6   # Official AWS action for OIDC auth (Node.js 24)
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}     # The IAM Role ARN, stored as a GitHub Secret
           aws-region: us-east-1                            # AWS region (S3 works from any region)
