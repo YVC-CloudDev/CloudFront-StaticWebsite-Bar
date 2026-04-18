@@ -2,7 +2,7 @@
 
 A beautiful, multi-page static website built to **learn and teach GitHub Actions**. This project includes working CI/CD workflows, automated validation, and auto-deployment to GitHub Pages and AWS S3.
 
-🌐 **Live on S3:** [http://githubactions-s3website-demo-hfs736.s3-website-us-east-1.amazonaws.com/](https://githubactions-s3website-demo-hfs736.s3-website-us-east-1.amazonaws.com/)
+🌐 **Live on S3:** [Click Here to Open Website](http://githubactions-s3website-demo-hfs736.s3-website-us-east-1.amazonaws.com/) *(opens over HTTP — S3 website endpoints do not support HTTPS)*
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
