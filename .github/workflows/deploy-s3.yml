@@ -1,0 +1,76 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # Required for OIDC token to assume IAM Role
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
+
+jobs:
+  deploy-to-s3:
+    name: Upload Website to S3
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials (Assume IAM Role via OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Verify AWS Identity
+        run: |
+          echo "✅ Successfully assumed IAM Role"
+          aws sts get-caller-identity
+
+      - name: Sync website files to S3
+        run: |
+          echo "🚀 Deploying website to S3 bucket: $S3_BUCKET"
+          echo ""
+
+          aws s3 sync . s3://$S3_BUCKET \
+            --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "README.md" \
+            --exclude "LICENSE" \
+            --cache-control "max-age=86400" \
+            --content-type "text/html" \
+            --exclude "*.css" \
+            --exclude "*.js" \
+            --exclude "*.svg" \
+            --exclude "*.png" \
+            --exclude "*.jpg" \
+            --exclude "*.ico"
+
+          # Upload CSS with correct content type
+          aws s3 sync ./css s3://$S3_BUCKET/css \
+            --content-type "text/css" \
+            --cache-control "max-age=604800"
+
+          # Upload JS with correct content type
+          aws s3 sync ./js s3://$S3_BUCKET/js \
+            --content-type "application/javascript" \
+            --cache-control "max-age=604800"
+
+          # Upload images with correct content type
+          aws s3 sync ./images s3://$S3_BUCKET/images \
+            --content-type "image/svg+xml" \
+            --cache-control "max-age=2592000"
+
+          echo ""
+          echo "✅ Deployment complete!"
+
+      - name: List deployed files
+        run: |
+          echo "📂 Files in S3 bucket:"
+          aws s3 ls s3://$S3_BUCKET --recursive --human-readable --summarize
