@@ -1,4 +1,4 @@
-# 🚀 DevFlow Academy — GitHub Actions Demo Website
+# 🚀 YVC-CloudDev Academy — GitHub Actions Demo Website
 
 A beautiful, multi-page static website built to **learn and teach GitHub Actions**. This project includes working CI/CD workflows, automated validation, and auto-deployment to GitHub Pages.
 
