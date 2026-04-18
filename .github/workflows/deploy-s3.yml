@@ -34,43 +34,11 @@ jobs:
 
       - name: Sync website files to S3
         run: |
-          echo "🚀 Deploying website to S3 bucket: $S3_BUCKET"
-          echo ""
-
+          echo "🚀 Deploying to S3 bucket: $S3_BUCKET"
           aws s3 sync . s3://$S3_BUCKET \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude "README.md" \
-            --exclude "LICENSE" \
-            --cache-control "max-age=86400" \
-            --content-type "text/html" \
-            --exclude "*.css" \
-            --exclude "*.js" \
-            --exclude "*.svg" \
-            --exclude "*.png" \
-            --exclude "*.jpg" \
-            --exclude "*.ico"
-
-          # Upload CSS with correct content type
-          aws s3 sync ./css s3://$S3_BUCKET/css \
-            --content-type "text/css" \
-            --cache-control "max-age=604800"
-
-          # Upload JS with correct content type
-          aws s3 sync ./js s3://$S3_BUCKET/js \
-            --content-type "application/javascript" \
-            --cache-control "max-age=604800"
-
-          # Upload images with correct content type
-          aws s3 sync ./images s3://$S3_BUCKET/images \
-            --content-type "image/svg+xml" \
-            --cache-control "max-age=2592000"
-
-          echo ""
+            --exclude "LICENSE"
           echo "✅ Deployment complete!"
-
-      - name: List deployed files
-        run: |
-          echo "📂 Files in S3 bucket:"
-          aws s3 ls s3://$S3_BUCKET --recursive --human-readable --summarize
