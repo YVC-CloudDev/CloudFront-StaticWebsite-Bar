@@ -1,6 +1,8 @@
 # 🚀 YVC-CloudDev Academy — GitHub Actions Demo Website
 
-A beautiful, multi-page static website built to **learn and teach GitHub Actions**. This project includes working CI/CD workflows, automated validation, and auto-deployment to GitHub Pages.
+A beautiful, multi-page static website built to **learn and teach GitHub Actions**. This project includes working CI/CD workflows, automated validation, and auto-deployment to GitHub Pages and AWS S3.
+
+🌐 **Live on S3:** [https://githubactions-s3website-demo-hfs736.s3-website-us-east-1.amazonaws.com/](https://githubactions-s3website-demo-hfs736.s3-website-us-east-1.amazonaws.com/)
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
@@ -37,6 +39,7 @@ A beautiful, multi-page static website built to **learn and teach GitHub Actions
 ├── .github/
 │   └── workflows/
 │       ├── deploy.yml      # 🚀 Auto-deploy to GitHub Pages
+│       ├── deploy-s3.yml   # ☁️ Auto-deploy to AWS S3 via OIDC
 │       ├── validate.yml    # ✅ HTML/CSS/JS validation on PR & push
 │       ├── welcome.yml     # 👋 Welcome new contributors
 │       └── link-check.yml  # 🔗 Weekly external link checker
@@ -45,11 +48,12 @@ A beautiful, multi-page static website built to **learn and teach GitHub Actions
 
 ## 🎯 GitHub Actions Workflows
 
-This repo includes **4 workflows** for learning:
+This repo includes **5 workflows** for learning:
 
 | Workflow | Trigger | What It Does |
 |----------|---------|-------------|
 | **Deploy** | Push to `main` | Deploys site to GitHub Pages |
+| **Deploy S3** | Push to `main` | Deploys site to AWS S3 using OIDC (no static keys!) |
 | **Validate** | Push & PR to `main` | Checks HTML structure, CSS/JS existence, internal links |
 | **Welcome** | New issue or PR | Posts a friendly welcome message |
 | **Link Check** | Weekly (Monday) | Validates all external URLs aren't broken |
