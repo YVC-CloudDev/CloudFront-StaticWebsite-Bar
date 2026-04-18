@@ -29,7 +29,6 @@ permissions:
 # --- ENVIRONMENT VARIABLES ---
 # Reusable variables available to ALL jobs and steps in this workflow
 env:
-  AWS_REGION: us-east-1                        # The AWS region where our S3 bucket lives
   S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}     # The bucket name, stored as a GitHub Secret for security
 
 # --- JOBS ---
@@ -58,7 +57,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4   # Official AWS action for OIDC auth
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}     # The IAM Role ARN, stored as a GitHub Secret
-          aws-region: ${{ env.AWS_REGION }}               # Which AWS region to use
+          aws-region: us-east-1                            # AWS region (S3 works from any region)
 
       # STEP 3: Verify we successfully authenticated
       # "aws sts get-caller-identity" shows WHO we are in AWS (the assumed role)
