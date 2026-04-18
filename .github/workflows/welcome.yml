@@ -1,0 +1,34 @@
+name: Welcome New Contributors
+
+on:
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome message
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const isIssue = context.eventName === 'issues';
+            const author = isIssue 
+              ? context.payload.issue.user.login 
+              : context.payload.pull_request.user.login;
+            const number = isIssue 
+              ? context.payload.issue.number 
+              : context.payload.pull_request.number;
+            
+            const message = isIssue
+              ? `👋 Hey @${author}! Thanks for opening this issue!\n\nWe'll review it shortly. In the meantime, feel free to check out our [contributing guidelines](CONTRIBUTING.md).`
+              : `🎉 Hey @${author}! Thanks for submitting this PR!\n\nWe'll review your changes soon. Make sure all checks pass! ✅`;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: number,
+              body: message
+            });
