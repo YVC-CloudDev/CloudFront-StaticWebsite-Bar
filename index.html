@@ -128,8 +128,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">See It In Action</span>
-                <h2>How This Site Gets <span class="gradient-text">Deployed</span></h2>
-                <p>Every push to the main branch triggers an automated workflow that builds and deploys this site.</p>
+                <h2>How This Site Gets <span class="gradient-text">Deployed to AWS</span></h2>
+                <p>Every push to the main branch triggers an automated workflow that authenticates with AWS using OIDC and syncs files to S3.</p>
             </div>
             <div class="workflow-demo">
                 <div class="code-window">
@@ -139,23 +139,29 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <span class="code-title">.github/workflows/deploy.yml</span>
+                        <span class="code-title">.github/workflows/deploy-s3.yml</span>
                     </div>
-                    <pre class="code-body"><code><span class="yaml-key">name:</span> Deploy Website
+                    <pre class="code-body"><code><span class="yaml-key">name:</span> Deploy to S3
 <span class="yaml-key">on:</span>
   <span class="yaml-key">push:</span>
     <span class="yaml-key">branches:</span> [ main ]
 
+<span class="yaml-key">permissions:</span>
+  <span class="yaml-key">id-token:</span> write   <span class="yaml-comment"># OIDC token</span>
+  <span class="yaml-key">contents:</span> read
+
 <span class="yaml-key">jobs:</span>
-  <span class="yaml-key">build-and-deploy:</span>
+  <span class="yaml-key">deploy-to-s3:</span>
     <span class="yaml-key">runs-on:</span> ubuntu-latest
     <span class="yaml-key">steps:</span>
-      - <span class="yaml-key">uses:</span> actions/checkout@v4
-      - <span class="yaml-key">name:</span> Deploy to GitHub Pages
-        <span class="yaml-key">uses:</span> peaceiris/actions-gh-pages@v3
+      - <span class="yaml-key">uses:</span> actions/checkout@v6
+      - <span class="yaml-key">name:</span> Configure AWS Credentials
+        <span class="yaml-key">uses:</span> aws-actions/configure-aws-credentials@v6
         <span class="yaml-key">with:</span>
-          <span class="yaml-key">github_token:</span> ${{ secrets.GITHUB_TOKEN }}
-          <span class="yaml-key">publish_dir:</span> ./</code></pre>
+          <span class="yaml-key">role-to-assume:</span> ${{ secrets.AWS_ROLE_ARN }}
+          <span class="yaml-key">aws-region:</span> us-east-1
+      - <span class="yaml-key">name:</span> Sync to S3
+        <span class="yaml-key">run:</span> aws s3 sync . s3://$S3_BUCKET --delete</code></pre>
                 </div>
                 <div class="workflow-steps">
                     <div class="workflow-step active">
@@ -167,26 +173,26 @@
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
-                        <div class="step-icon">⚙️</div>
+                        <div class="step-icon">🔐</div>
                         <div class="step-info">
-                            <h4>2. Trigger Workflow</h4>
-                            <p>GitHub Actions detects the push event</p>
+                            <h4>2. OIDC Auth</h4>
+                            <p>GitHub proves identity to AWS via token</p>
                         </div>
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
-                        <div class="step-icon">🔍</div>
+                        <div class="step-icon">☁️</div>
                         <div class="step-info">
-                            <h4>3. Run Checks</h4>
-                            <p>Lint HTML, validate links, check assets</p>
+                            <h4>3. Assume Role</h4>
+                            <p>AWS grants temporary credentials</p>
                         </div>
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
                         <div class="step-icon">🚀</div>
                         <div class="step-info">
-                            <h4>4. Deploy</h4>
-                            <p>Site published to GitHub Pages</p>
+                            <h4>4. Deploy to S3</h4>
+                            <p>Files synced to S3 bucket</p>
                         </div>
                     </div>
                 </div>
