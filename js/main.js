@@ -1,5 +1,5 @@
 /* ===================================
-   DevFlow Academy - Main JavaScript
+   YVC-CloudDev - Main JavaScript
    Interactive features & animations
    =================================== */
 
