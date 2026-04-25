@@ -1,6 +1,6 @@
 /* ===================================
    YVC-CloudDev - Main JavaScript
-   Interactive features & animations
+   AWS S3 & CloudFront - Interactive features & animations
    =================================== */
 
 document.addEventListener('DOMContentLoaded', () => {

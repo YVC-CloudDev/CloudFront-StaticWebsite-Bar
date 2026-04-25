@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - YVC-CloudDev</title>
+    <title>Contact - YVC-CloudDev | AWS S3 & CloudFront</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
@@ -69,6 +69,7 @@
                                 <option value="course">Course Inquiry</option>
                                 <option value="partnership">Partnership</option>
                                 <option value="bug">Report a Bug</option>
+                                <option value="aws">AWS Hosting Help</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -117,20 +118,20 @@
                         <h3>Frequently Asked Questions</h3>
                         <div class="faq-list">
                             <details class="faq-item">
-                                <summary>Are the courses really free?</summary>
-                                <p>Yes! All core course materials are completely free and open source. We believe education should be accessible to everyone.</p>
+                                <summary>Do I need prior experience with AWS?</summary>
+                                <p>Not at all. Our beginner courses start from the very basics of S3. You just need a free AWS account to get started.</p>
                             </details>
                             <details class="faq-item">
-                                <summary>Do I need prior experience with CI/CD?</summary>
-                                <p>Not at all. Our beginner courses start from the very basics. You just need to know basic Git commands.</p>
+                                <summary>Is CloudFront expensive?</summary>
+                                <p>AWS offers a generous free tier: 1 TB of data transfer and 10,000,000 HTTP/HTTPS requests per month for the first year. After that, you only pay for what you use.</p>
                             </details>
                             <details class="faq-item">
-                                <summary>Can I use these projects in my portfolio?</summary>
-                                <p>Absolutely! Fork any project, customize it, and showcase it. That's exactly what they're designed for.</p>
+                                <summary>Why use CloudFront instead of just S3 hosting?</summary>
+                                <p>CloudFront adds HTTPS, global CDN delivery, DDoS protection, and edge caching. It's more secure, faster, and often cheaper due to reduced S3 requests.</p>
                             </details>
                             <details class="faq-item">
-                                <summary>How do I deploy this site with GitHub Actions?</summary>
-                                <p>Fork this repository, enable GitHub Pages in your repo settings, and the included workflow will handle the rest automatically!</p>
+                                <summary>How do I get started with S3 + CloudFront?</summary>
+                                <p>Sign up for AWS, create an S3 bucket, upload your site, and create a CloudFront distribution pointing to your bucket. Our beginner course walks you through it step by step!</p>
                             </details>
                         </div>
                     </div>
@@ -177,7 +178,7 @@
                         <img src="images/logo.svg" alt="YVC-CloudDev" width="36" height="36">
                         <span>YVC-CloudDev</span>
                     </a>
-                    <p>Learn CI/CD and GitHub Actions through hands-on projects and real-world workflows.</p>
+                    <p>Learn AWS S3 and CloudFront through hands-on projects and real-world cloud hosting.</p>
                     <div class="social-links">
                         <a href="#" aria-label="GitHub"><img src="images/icon-github.svg" alt="GitHub" width="24" height="24"></a>
                         <a href="#" aria-label="Twitter"><img src="images/icon-twitter.svg" alt="Twitter" width="24" height="24"></a>
@@ -197,9 +198,9 @@
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">Official Docs</a></li>
-                        <li><a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
-                        <li><a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a></li>
+                        <li><a href="https://docs.aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">S3 Docs</a></li>
+                        <li><a href="https://docs.aws.amazon.com/cloudfront/" target="_blank" rel="noopener noreferrer">CloudFront Docs</a></li>
+                        <li><a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">AWS Free Tier</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -212,7 +213,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and deployed with GitHub Actions.</p>
+                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and hosted on AWS S3 + CloudFront.</p>
             </div>
         </div>
     </footer>

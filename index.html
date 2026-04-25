@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YVC-CloudDev Academy - Learn GitHub Actions</title>
+    <title>YVC-CloudDev Academy - AWS S3 & CloudFront</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
@@ -35,9 +35,9 @@
         <div class="hero-particles" id="particles"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <span class="badge">🚀 Automate Everything</span>
-                <h1>Master <span class="gradient-text">GitHub Actions</span> From Zero to Hero</h1>
-                <p>Learn CI/CD, automate workflows, and deploy with confidence. This very website is built and deployed using GitHub Actions!</p>
+                <span class="badge">☁️ Cloud Hosting Done Right</span>
+                <h1>Deploy with <span class="gradient-text">AWS S3 & CloudFront</span> for Speed & Security</h1>
+                <p>Host static websites on AWS S3 and deliver them globally with CloudFront CDN. Faster, more secure, and highly scalable cloud hosting!</p>
                 <div class="hero-buttons">
                     <a href="courses.html" class="btn btn-primary">Start Learning</a>
                     <a href="#features" class="btn btn-outline">Explore Features</a>
@@ -49,7 +49,7 @@
                     </div>
                     <div class="stat">
                         <strong id="counterProjects">0</strong>
-                        <span>Projects</span>
+                        <span>AWS Services</span>
                     </div>
                     <div class="stat">
                         <strong id="counterStudents">0</strong>
@@ -72,52 +72,52 @@
     <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Why GitHub Actions?</span>
-                <h2>Everything You Need to <span class="gradient-text">Automate</span></h2>
-                <p>GitHub Actions makes it easy to automate all your software workflows with world-class CI/CD.</p>
+                <span class="section-tag">Why AWS S3 & CloudFront?</span>
+                <h2>Everything You Need to <span class="gradient-text">Host & Deliver</span></h2>
+                <p>AWS S3 and CloudFront give you scalable, secure, and lightning-fast static website hosting with global CDN delivery.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card" data-aos="fade-up">
                     <div class="feature-icon">
-                        <img src="images/icon-workflow.svg" alt="Workflow Icon">
+                        <img src="images/icon-workflow.svg" alt="S3 Bucket Icon">
                     </div>
-                    <h3>Custom Workflows</h3>
-                    <p>Create custom software development lifecycle workflows directly in your GitHub repository.</p>
+                    <h3>S3 Static Hosting</h3>
+                    <p>Host your static websites directly from an S3 bucket with virtually unlimited scalability and 99.999999999% durability.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-delay="100">
                     <div class="feature-icon">
-                        <img src="images/icon-deploy.svg" alt="Deploy Icon">
+                        <img src="images/icon-deploy.svg" alt="CloudFront Icon">
                     </div>
-                    <h3>Auto Deploy</h3>
-                    <p>Automatically deploy to any cloud provider or hosting platform with every push or pull request.</p>
+                    <h3>CloudFront CDN</h3>
+                    <p>Deliver content globally through 450+ edge locations. Users get blazing-fast load times no matter where they are.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-delay="200">
                     <div class="feature-icon">
-                        <img src="images/icon-test.svg" alt="Test Icon">
+                        <img src="images/icon-security.svg" alt="HTTPS Icon">
                     </div>
-                    <h3>Automated Testing</h3>
-                    <p>Run your test suite automatically on every commit. Catch bugs before they reach production.</p>
+                    <h3>Free HTTPS / SSL</h3>
+                    <p>CloudFront provides free SSL/TLS certificates via AWS Certificate Manager. Your site is always served over HTTPS.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-delay="300">
                     <div class="feature-icon">
-                        <img src="images/icon-security.svg" alt="Security Icon">
+                        <img src="images/icon-test.svg" alt="Security Icon">
                     </div>
-                    <h3>Security Scanning</h3>
-                    <p>Integrate security checks and vulnerability scanning into your CI/CD pipeline seamlessly.</p>
+                    <h3>DDoS Protection</h3>
+                    <p>AWS Shield Standard is included at no extra cost, protecting your site from common DDoS attacks automatically.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-delay="400">
                     <div class="feature-icon">
-                        <img src="images/icon-matrix.svg" alt="Matrix Icon">
+                        <img src="images/icon-matrix.svg" alt="Caching Icon">
                     </div>
-                    <h3>Matrix Builds</h3>
-                    <p>Test across multiple operating systems, language versions, and configurations simultaneously.</p>
+                    <h3>Edge Caching</h3>
+                    <p>CloudFront caches your content at edge locations worldwide, reducing S3 requests and lowering costs dramatically.</p>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-delay="500">
                     <div class="feature-icon">
-                        <img src="images/icon-marketplace.svg" alt="Marketplace Icon">
+                        <img src="images/icon-marketplace.svg" alt="Cost Icon">
                     </div>
-                    <h3>Marketplace</h3>
-                    <p>Access thousands of community-built actions from the GitHub Marketplace for any task.</p>
+                    <h3>Pay As You Go</h3>
+                    <p>No upfront costs or long-term contracts. Only pay for the storage and bandwidth you actually use.</p>
                 </div>
             </div>
         </div>
@@ -128,8 +128,8 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">See It In Action</span>
-                <h2>How This Site Gets <span class="gradient-text">Deployed to AWS</span></h2>
-                <p>Every push to the main branch triggers an automated workflow that authenticates with AWS using OIDC and syncs files to S3.</p>
+                <h2>How <span class="gradient-text">S3 + CloudFront</span> Work Together</h2>
+                <p>Upload your files to S3, create a CloudFront distribution, and your site is served globally over HTTPS with edge caching.</p>
             </div>
             <div class="workflow-demo">
                 <div class="code-window">
@@ -139,60 +139,54 @@
                             <span class="dot yellow"></span>
                             <span class="dot green"></span>
                         </div>
-                        <span class="code-title">.github/workflows/deploy-s3.yml</span>
+                        <span class="code-title">AWS CLI — S3 + CloudFront Setup</span>
                     </div>
-                    <pre class="code-body"><code><span class="yaml-key">name:</span> Deploy to S3
-<span class="yaml-key">on:</span>
-  <span class="yaml-key">push:</span>
-    <span class="yaml-key">branches:</span> [ main ]
+                    <pre class="code-body"><code><span class="yaml-comment"># 1. Create an S3 bucket for static hosting</span>
+<span class="yaml-key">aws s3 mb</span> s3://my-website-bucket
 
-<span class="yaml-key">permissions:</span>
-  <span class="yaml-key">id-token:</span> write   <span class="yaml-comment"># OIDC token</span>
-  <span class="yaml-key">contents:</span> read
+<span class="yaml-comment"># 2. Upload your website files</span>
+<span class="yaml-key">aws s3 sync</span> ./site s3://my-website-bucket
 
-<span class="yaml-key">jobs:</span>
-  <span class="yaml-key">deploy-to-s3:</span>
-    <span class="yaml-key">runs-on:</span> ubuntu-latest
-    <span class="yaml-key">steps:</span>
-      - <span class="yaml-key">uses:</span> actions/checkout@v6
-      - <span class="yaml-key">name:</span> Configure AWS Credentials
-        <span class="yaml-key">uses:</span> aws-actions/configure-aws-credentials@v6
-        <span class="yaml-key">with:</span>
-          <span class="yaml-key">role-to-assume:</span> ${{ secrets.AWS_ROLE_ARN }}
-          <span class="yaml-key">aws-region:</span> us-east-1
-      - <span class="yaml-key">name:</span> Sync to S3
-        <span class="yaml-key">run:</span> aws s3 sync . s3://$S3_BUCKET --delete</code></pre>
+<span class="yaml-comment"># 3. Create CloudFront distribution</span>
+<span class="yaml-key">aws cloudfront</span> create-distribution \
+  --origin-domain-name my-website-bucket.s3.amazonaws.com \
+  --default-root-object index.html
+
+<span class="yaml-comment"># 4. Invalidate cache after updates</span>
+<span class="yaml-key">aws cloudfront</span> create-invalidation \
+  --distribution-id EDFDVBD6EXAMPLE \
+  --paths "/*"</code></pre>
                 </div>
                 <div class="workflow-steps">
                     <div class="workflow-step active">
-                        <div class="step-icon">📝</div>
+                        <div class="step-icon">�</div>
                         <div class="step-info">
-                            <h4>1. Push Code</h4>
-                            <p>Developer pushes to main branch</p>
+                            <h4>1. Upload to S3</h4>
+                            <p>Static files stored in an S3 bucket</p>
                         </div>
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
-                        <div class="step-icon">🔐</div>
+                        <div class="step-icon">🌐</div>
                         <div class="step-info">
-                            <h4>2. OIDC Auth</h4>
-                            <p>GitHub proves identity to AWS via token</p>
+                            <h4>2. CloudFront CDN</h4>
+                            <p>Content cached at 450+ edge locations</p>
                         </div>
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
-                        <div class="step-icon">☁️</div>
+                        <div class="step-icon">🔒</div>
                         <div class="step-info">
-                            <h4>3. Assume Role</h4>
-                            <p>AWS grants temporary credentials</p>
+                            <h4>3. HTTPS & Security</h4>
+                            <p>Free SSL + DDoS protection via AWS Shield</p>
                         </div>
                     </div>
                     <div class="workflow-connector"></div>
                     <div class="workflow-step">
-                        <div class="step-icon">🚀</div>
+                        <div class="step-icon">⚡</div>
                         <div class="step-info">
-                            <h4>4. Deploy to S3</h4>
-                            <p>Files synced to S3 bucket</p>
+                            <h4>4. Global Delivery</h4>
+                            <p>Users served from nearest edge location</p>
                         </div>
                     </div>
                 </div>
@@ -210,18 +204,18 @@
             <div class="testimonial-slider" id="testimonialSlider">
                 <div class="testimonial-card active">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p>"GitHub Actions completely transformed our deployment process. What used to take hours now happens in minutes, automatically."</p>
+                    <p>"Moving to S3 + CloudFront cut our page load times by 70%. The global CDN makes a huge difference for our international users."</p>
                     <div class="testimonial-author">
                         <img src="images/avatar-1.svg" alt="Sarah Chen" width="48" height="48">
                         <div>
                             <strong>Sarah Chen</strong>
-                            <span>Senior DevOps Engineer</span>
+                            <span>Senior Cloud Architect</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p>"The best resource for learning CI/CD. The hands-on projects made everything click. I went from zero to deploying production apps."</p>
+                    <p>"CloudFront's HTTPS and DDoS protection gave us enterprise-level security without the enterprise price tag. Highly recommended!"</p>
                     <div class="testimonial-author">
                         <img src="images/avatar-2.svg" alt="Marcus Rivera" width="48" height="48">
                         <div>
@@ -232,12 +226,12 @@
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-stars">★★★★★</div>
-                    <p>"I teach a DevOps bootcamp and this is my go-to demo project. Students love seeing the live deployment pipeline in action."</p>
+                    <p>"I teach cloud architecture and S3 + CloudFront is the perfect example of how AWS services work together. Students love it."</p>
                     <div class="testimonial-author">
                         <img src="images/avatar-3.svg" alt="Aisha Patel" width="48" height="48">
                         <div>
                             <strong>Aisha Patel</strong>
-                            <span>DevOps Instructor</span>
+                            <span>AWS Instructor</span>
                         </div>
                     </div>
                 </div>
@@ -250,11 +244,11 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Automate Your Workflow?</h2>
-                <p>Start learning GitHub Actions today and transform the way you build, test, and deploy software.</p>
+                <h2>Ready to Host on AWS?</h2>
+                <p>Start using AWS S3 and CloudFront today for fast, secure, and scalable static website hosting.</p>
                 <div class="cta-buttons">
                     <a href="courses.html" class="btn btn-primary btn-lg">Get Started Free</a>
-                    <a href="https://github.com" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    <a href="https://aws.amazon.com/cloudfront/" class="btn btn-outline btn-lg" target="_blank" rel="noopener noreferrer">Learn More on AWS</a>
                 </div>
             </div>
         </div>
@@ -269,7 +263,7 @@
                         <img src="images/logo.svg" alt="YVC-CloudDev" width="36" height="36">
                         <span>YVC-CloudDev</span>
                     </a>
-                    <p>Learn CI/CD and GitHub Actions through hands-on projects and real-world workflows.</p>
+                    <p>Learn AWS S3 and CloudFront through hands-on projects and real-world cloud hosting.</p>
                     <div class="social-links">
                         <a href="#" aria-label="GitHub"><img src="images/icon-github.svg" alt="GitHub" width="24" height="24"></a>
                         <a href="#" aria-label="Twitter"><img src="images/icon-twitter.svg" alt="Twitter" width="24" height="24"></a>
@@ -289,9 +283,9 @@
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">Official Docs</a></li>
-                        <li><a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
-                        <li><a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a></li>
+                        <li><a href="https://docs.aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">S3 Docs</a></li>
+                        <li><a href="https://docs.aws.amazon.com/cloudfront/" target="_blank" rel="noopener noreferrer">CloudFront Docs</a></li>
+                        <li><a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">AWS Free Tier</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -304,7 +298,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and deployed with GitHub Actions.</p>
+                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and hosted on AWS S3 + CloudFront.</p>
             </div>
         </div>
     </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - YVC-CloudDev</title>
+    <title>Projects - YVC-CloudDev | AWS S3 & CloudFront</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
@@ -35,7 +35,7 @@
         <div class="container">
             <span class="badge">🛠️ Hands-On Practice</span>
             <h1>Sample <span class="gradient-text">Projects</span></h1>
-            <p>Real-world projects with GitHub Actions workflows you can fork and learn from.</p>
+            <p>Real-world AWS hosting projects using S3 and CloudFront that you can clone and learn from.</p>
         </div>
     </header>
 
@@ -46,25 +46,25 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-1.svg" alt="Portfolio Website Project">
+                        <img src="images/project-1.svg" alt="S3 Static Website">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
                         <div class="project-category">Static Site</div>
-                        <h3>Auto-Deploy Portfolio</h3>
-                        <p>A personal portfolio website that automatically deploys to GitHub Pages on every push to the main branch.</p>
+                        <h3>S3 Static Website</h3>
+                        <p>A portfolio website hosted entirely on AWS S3 with static website hosting enabled and public access configured.</p>
                         <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>GitHub Pages</span>
+                            <span>S3</span>
+                            <span>HTML/CSS</span>
+                            <span>Bucket Policy</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty easy">Easy</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -73,25 +73,25 @@
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-2.svg" alt="Node.js API Project">
+                        <img src="images/project-2.svg" alt="CloudFront + S3 Website">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-category">API</div>
-                        <h3>REST API with Auto-Testing</h3>
-                        <p>A Node.js REST API with automated test runs on every pull request. Includes linting and code coverage reporting.</p>
+                        <div class="project-category">CDN</div>
+                        <h3>S3 + CloudFront with HTTPS</h3>
+                        <p>A website served through CloudFront CDN with free SSL/TLS from AWS Certificate Manager. Origin Access Control for security.</p>
                         <div class="project-tech">
-                            <span>Node.js</span>
-                            <span>Jest</span>
-                            <span>ESLint</span>
+                            <span>CloudFront</span>
+                            <span>ACM</span>
+                            <span>OAC</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty medium">Medium</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -100,25 +100,25 @@
                 <!-- Project 3 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-3.svg" alt="Docker App Project">
+                        <img src="images/project-3.svg" alt="Custom Domain Project">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-category">Docker</div>
-                        <h3>Containerized App Pipeline</h3>
-                        <p>Build Docker images, run container tests, push to Docker Hub, and deploy — all in one workflow.</p>
+                        <div class="project-category">DNS</div>
+                        <h3>Custom Domain with Route 53</h3>
+                        <p>Configure a custom domain using Route 53 with CloudFront. Includes DNS setup, SSL certificate validation, and CNAME records.</p>
                         <div class="project-tech">
-                            <span>Docker</span>
-                            <span>Python</span>
-                            <span>Docker Hub</span>
+                            <span>Route 53</span>
+                            <span>CloudFront</span>
+                            <span>ACM</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty medium">Medium</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -127,25 +127,25 @@
                 <!-- Project 4 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-4.svg" alt="Multi-Environment Deploy">
+                        <img src="images/project-4.svg" alt="Multi-Origin CloudFront">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-category">DevOps</div>
-                        <h3>Multi-Environment Deploy</h3>
-                        <p>Deploy to staging and production environments with approval gates, rollback support, and Slack notifications.</p>
+                        <div class="project-category">Advanced</div>
+                        <h3>Multi-Origin CloudFront</h3>
+                        <p>Configure CloudFront with multiple S3 origins using path-based routing. Serve static assets and API responses from different buckets.</p>
                         <div class="project-tech">
-                            <span>AWS</span>
-                            <span>Environments</span>
-                            <span>Secrets</span>
+                            <span>CloudFront</span>
+                            <span>Multiple S3</span>
+                            <span>Behaviors</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty hard">Hard</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -154,25 +154,25 @@
                 <!-- Project 5 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-5.svg" alt="Monorepo CI Project">
+                        <img src="images/project-5.svg" alt="CloudFront WAF Project">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-category">Advanced</div>
-                        <h3>Monorepo CI System</h3>
-                        <p>Smart CI for a monorepo — only runs tests for packages that changed using path filters and matrix strategies.</p>
+                        <div class="project-category">Security</div>
+                        <h3>CloudFront + WAF Security</h3>
+                        <p>Protect your CloudFront distribution with AWS WAF rules. Block malicious requests, rate-limit traffic, and set geo-restrictions.</p>
                         <div class="project-tech">
-                            <span>Matrix</span>
-                            <span>Path Filters</span>
-                            <span>Caching</span>
+                            <span>WAF</span>
+                            <span>Shield</span>
+                            <span>Geo-Restrict</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty hard">Hard</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -181,25 +181,25 @@
                 <!-- Project 6 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="images/project-6.svg" alt="Release Automation Project">
+                        <img src="images/project-6.svg" alt="Lambda@Edge Project">
                         <div class="project-overlay">
                             <a href="#" class="btn btn-primary btn-sm">View Details</a>
                         </div>
                     </div>
                     <div class="project-body">
-                        <div class="project-category">Automation</div>
-                        <h3>Automated Release System</h3>
-                        <p>Semantic versioning, changelogs, release notes, and npm publishing — all triggered by commit conventions.</p>
+                        <div class="project-category">Serverless</div>
+                        <h3>Lambda@Edge URL Rewriting</h3>
+                        <p>Use Lambda@Edge with CloudFront for dynamic URL rewriting, A/B testing, and header manipulation at the edge.</p>
                         <div class="project-tech">
-                            <span>Semantic Release</span>
-                            <span>npm</span>
-                            <span>Changelog</span>
+                            <span>Lambda@Edge</span>
+                            <span>CloudFront</span>
+                            <span>Node.js</span>
                         </div>
                         <div class="project-actions">
                             <span class="difficulty hard">Hard</span>
                             <a href="#" class="project-link">
                                 <img src="images/icon-github.svg" alt="GitHub" width="20" height="20">
-                                Fork Project
+                                Clone Project
                             </a>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
             <div class="contribute-card">
                 <div class="contribute-text">
                     <h2>Have a Project Idea?</h2>
-                    <p>We welcome community contributions! If you've built something cool with GitHub Actions, submit it to our project showcase.</p>
+                    <p>We welcome community contributions! If you've built something cool with AWS S3 and CloudFront, submit it to our project showcase.</p>
                     <a href="contact.html" class="btn btn-primary">Submit a Project</a>
                 </div>
                 <div class="contribute-image">
@@ -233,7 +233,7 @@
                         <img src="images/logo.svg" alt="YVC-CloudDev" width="36" height="36">
                         <span>YVC-CloudDev</span>
                     </a>
-                    <p>Learn CI/CD and GitHub Actions through hands-on projects and real-world workflows.</p>
+                    <p>Learn AWS S3 and CloudFront through hands-on projects and real-world cloud hosting.</p>
                     <div class="social-links">
                         <a href="#" aria-label="GitHub"><img src="images/icon-github.svg" alt="GitHub" width="24" height="24"></a>
                         <a href="#" aria-label="Twitter"><img src="images/icon-twitter.svg" alt="Twitter" width="24" height="24"></a>
@@ -253,9 +253,9 @@
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">Official Docs</a></li>
-                        <li><a href="https://github.com/marketplace?type=actions" target="_blank" rel="noopener noreferrer">Marketplace</a></li>
-                        <li><a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a></li>
+                        <li><a href="https://docs.aws.amazon.com/s3/" target="_blank" rel="noopener noreferrer">S3 Docs</a></li>
+                        <li><a href="https://docs.aws.amazon.com/cloudfront/" target="_blank" rel="noopener noreferrer">CloudFront Docs</a></li>
+                        <li><a href="https://aws.amazon.com/free/" target="_blank" rel="noopener noreferrer">AWS Free Tier</a></li>
                     </ul>
                 </div>
                 <div class="footer-newsletter">
@@ -268,7 +268,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and deployed with GitHub Actions.</p>
+                <p>&copy; 2026 YVC-CloudDev. Built with ❤️ and hosted on AWS S3 + CloudFront.</p>
             </div>
         </div>
     </footer>
